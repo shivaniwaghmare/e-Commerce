@@ -1,87 +1,38 @@
 @extends('layouts.master')
 @section('content')
-<div class="col-md-3">
-    <div href="#" class="card card-product-grid">
-    <a href="#" class="img-wrap"> <img src="assets/images/items/1.jpg"> </a>
-    <figcaption class="info-wrap">
-        <a href="#" class="title">Just another product name</a>
-        
-        <div class="rating-wrap">
-        <ul class="rating-stars">
-            <li style="width:80%" class="stars-active"> 
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-            </li>
-            <li>
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
-            </li>
-        </ul>
-        <span class="label-rating text-muted"> 34 reviws</span>
+     
+<form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    
+     <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Name:</strong>
+                <input type="text" name="name" class="form-control" placeholder="Name">
+            </div>
         </div>
-        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-    </figcaption>
-    </div>
-</div> <!-- col.// -->
-<div class="col-md-3">
-    <div href="#" class="card card-product-grid">
-    <a href="#" class="img-wrap"> <img src="assets/images/items/2.jpg"> </a>
-    <figcaption class="info-wrap">
-        <a href="#" class="title">Some item name here</a>
-        
-        <div class="rating-wrap">
-        <ul class="rating-stars">
-            <li style="width:80%" class="stars-active"> 
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-            </li>
-            <li>
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
-            </li>
-        </ul>
-        <span class="label-rating text-muted"> 34 reviws</span>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Price:</strong>
+                <input type="text" class="form-control" name="price" placeholder="Price">
+            </div>
         </div>
-        <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
-    </figcaption>
-    </div>
-</div> <!-- col.// -->
-<div class="col-md-3">
-    <div href="#" class="card card-product-grid">
-    <a href="#" class="img-wrap"> <img src="assets/images/items/3.jpg"> </a>
-    <figcaption class="info-wrap">
-        <a href="#" class="title">Great product name here</a>
-        
-        <div class="rating-wrap">
-        <ul class="rating-stars">
-            <li style="width:80%" class="stars-active"> 
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-            </li>
-            <li>
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
-            </li>
-        </ul>
-        <span class="label-rating text-muted"> 34 reviws</span>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Description:</strong>
+                <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
+            </div>
         </div>
-        <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
-    </figcaption>
-    </div>
-</div> <!-- col.// -->
-<div class="col-md-3">
-    <div href="#" class="card card-product-grid">
-    <a href="#" class="img-wrap"> <img src="assets/images/items/4.jpg"> </a>
-    <figcaption class="info-wrap">
-        <a href="#" class="title">Just another product name</a>
-        
-        <div class="rating-wrap">
-        <ul class="rating-stars">
-            <li style="width:80%" class="stars-active"> 
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-            </li>
-            <li>
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
-            </li>
-        </ul>
-        <span class="label-rating text-muted"> 34 reviws</span>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
+                <input type="file" name="image" class="form-control" placeholder="image">
+            </div>
         </div>
-        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-    </figcaption>
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </div>
-</div> <!-- col.// -->
+     
+</form>
 @stop

@@ -5,7 +5,7 @@
         <li class="nav-item"><a class="nav-link" href="/">Shop</a></li>
         @if(Auth::check())
             @if (Auth::user()->is_admin())
-            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('products') }}">Products</a></li>
             @endif
         @endif
         <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
