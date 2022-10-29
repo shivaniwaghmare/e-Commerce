@@ -3,7 +3,11 @@
     <div class="container">
         <ul class="navbar-nav d-none d-md-flex mr-auto">
         <li class="nav-item"><a class="nav-link" href="/">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+        @if(Auth::check())
+            @if (Auth::user()->is_admin())
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            @endif
+        @endif
         <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Checkout</a></li>
         </ul>
@@ -39,13 +43,24 @@
         <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
         <span class="badge badge-pill badge-danger notify">0</span>
       </div>
-      <div class="widget-header icontext">
-        <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
-        <div class="text">
-          <span class="text-muted">Welcome!</span>
+        <div class="widget-header icontext">
+            @guest
+            @else
+                <a href="#" class="icon icon-sm rounded-circle border" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                </ul>
+                <div class="text">
+            @endguest
+          <!-- <span class="text-muted">Welcome!</span> -->
           <div> 
-            <a href="#">Sign in</a> |  
-            <a href="#"> Register</a>
+           
+            @guest
+                <a href="{{route('login')}}">Sign | Register</a> 
+            @else
+                {{ Auth::user()->name }}
+
+            @endguest 
           </div>
         </div>
       </div>

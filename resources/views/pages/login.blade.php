@@ -26,15 +26,13 @@
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="#" class="login">
+               <form action="{{ route('login.custom') }}" class="login" method="POST">
+                @csrf
                   <div class="field">
-                     <input type="text" placeholder="Email Address" required>
+                     <input type="text" id="email" name="email" placeholder="Email Address" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
-                  </div>
-                  <div class="pass-link">
-                     <a href="#">Forgot password?</a>
+                     <input type="password" id="password" name="password" placeholder="Password" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
@@ -44,15 +42,16 @@
                      Not a member? <a href="">Signup now</a>
                   </div>
                </form>
-               <form action="#" class="signup">
+               <form action="{{ route('register') }}" class="signup" method="POST">
+                    @csrf
                   <div class="field">
-                     <input type="text" placeholder="Email Address" required>
+                     <input type="text" id="name" placeholder="Name" name="name" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                     <input type="text" id="email" placeholder="Email Address" name="email" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirm password" required>
+                     <input type="password" id="password" placeholder="Password" name="password" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
