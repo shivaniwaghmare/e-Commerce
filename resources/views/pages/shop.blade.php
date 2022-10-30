@@ -1,5 +1,11 @@
 @extends('layouts.master')
 @section('content')
+
+<header class="section-heading">
+    <h3 class="section-title">Products</h3>
+</header><!-- sect-heading -->
+<div class="row">
+
 <div class="col-md-3">
     <div href="#" class="card card-product-grid">
     <a href="#" class="img-wrap"> <img src="assets/images/items/1.jpg"> </a>
@@ -84,4 +90,6 @@
     </figcaption>
     </div>
 </div> <!-- col.// -->
+</div> <!-- row.// -->
+
 @stop

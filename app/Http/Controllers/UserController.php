@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\product;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::get();
-        return view('pages.home', compact('users'));
+        $products = Product::all();
+        return view('pages.home', compact('users','products'));
     }
 
     public function login()

@@ -1,10 +1,14 @@
 @extends('layouts.master')
 @section('content')
      
+<header class="section-heading">
+    <h3 class="section-title"> Add Products</h3>
+</header><!-- sect-heading -->
+<div class="row">
 <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     
-     <div class="row">
+     <div class="row form-group">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
@@ -35,4 +39,7 @@
     </div>
      
 </form>
+
+</div> <!-- row.// -->
+
 @stop
